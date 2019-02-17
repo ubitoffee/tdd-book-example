@@ -1,5 +1,6 @@
 package test.java.com.ubitoffee.tdd;
 
+import main.java.com.ubitoffee.tdd.currency.Franc;
 import main.java.com.ubitoffee.tdd.currency.Money;
 import org.junit.jupiter.api.Test;
 
@@ -12,6 +13,11 @@ class DollarTest {
         Money money = Money.dollar(5);
         assertEquals(Money.dollar(10), money.times(2));
         assertEquals(Money.dollar(15), money.times(3));
+    }
+
+    @Test
+    public void testDifferentClassEquality() {
+        assertTrue(new Money(10, "CHF").equals(new Franc(10, "CHF")));
     }
 
     @Test
